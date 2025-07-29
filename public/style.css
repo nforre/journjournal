@@ -90,7 +90,7 @@
 
 	/* controls grid */
 	#controls {
-		background: #ba3f3f;
+		background: rgb(199, 68, 151);
 		position: relative;
 		display: grid;
 		border: 2px solid rgb(213, 213, 213);
@@ -112,7 +112,7 @@
 		background: inherit;
 		border: none;
 		border-radius: 50%;
-		color: #692222;
+		color: #902260;
 		margin: 0px;
 		text-shadow: 2px -1px 2px rgba(225, 212, 212, 0.815);
 	}
@@ -127,7 +127,7 @@
 	button#current-song-btn {
 		position: relative;
 		border: 1px solid rgb(213, 213, 213);
-		background: #ba3f3f;
+		background: rgb(199, 68, 151);
 		color: white;
 		font-size: 10px;
 		text-align: center;
