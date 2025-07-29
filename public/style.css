@@ -44,8 +44,8 @@ lol {
   .img2 {
     /* album's cover image u can change the size! */
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 30px;
     background-color: black;
     color: black;
     z-index: 999;
