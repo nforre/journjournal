@@ -42,7 +42,7 @@
 #music {
 	box-sizing: border-box;
 	position: relative;
-  right: 10px;
+  left: 10px;
 	font-family: arial, nerdfont;
 	padding-top: 1px;
 	background: rgb(232, 84, 84);
