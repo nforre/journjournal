@@ -40,7 +40,7 @@
 
 body {
   display: flex;
-  cursor: url("https://64.media.tumblr.com/98690f3da30aba53bc849a4131aa6e00/2a5da151f0948118-5b/s1280x1920/75982d23f3ead95be80aa9135b1223a731d8cd91.pnj"), auto;
+  cursor: "chiwa.png", auto;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -51,7 +51,7 @@ body {
   font-family: var(--font);
   line-height: 1.2;
   background: var(--background-color);
-  background-image: url("https://i.pinimg.com/736x/b6/92/98/b69298baecdff3a3691bcf2577e684ca.jpg");
+  background-image: url("https://i.pinimg.com/1200x/57/75/f9/5775f92ccc08e42146201181a9e0982e.jpg");
   
 }
 
