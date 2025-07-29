@@ -40,7 +40,7 @@
 
 body {
   display: flex;
-  cursor: "chiwa.png", auto;
+  cursor: url(rei-grey.cur), auto;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -51,7 +51,7 @@ body {
   font-family: var(--font);
   line-height: 1.2;
   background: var(--background-color);
-  background-image: url("https://i.pinimg.com/1200x/57/75/f9/5775f92ccc08e42146201181a9e0982e.jpg");
+  background-image: url("https://i.pinimg.com/736x/8e/4c/a7/8e4ca79230540893647b2b4f81aeb355.jpg");
   
 }
 
