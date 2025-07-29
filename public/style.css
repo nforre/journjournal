@@ -54,10 +54,9 @@ lol,
 
 .img1 {
   /* cd image u can change the size too */
-  position: absolute;
+  position: relative;
   width: auto;
-  height: 92px;
-  right:  280px;
+  height: 90px;
   z-index: 800;
   -webkit-animation: spin 2s linear infinite;
   -webkit-animation: spin 4s linear infinite;
