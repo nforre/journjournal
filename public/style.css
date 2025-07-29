@@ -9,13 +9,13 @@
   /* Background Colors: */
   --background-color: rgb(255, 186, 232);
   --content-background-color: #bfe4a8;
-  --sidebar-background-color: #ffb2d1e1;
+  --sidebar-background-color: #d582a3c3;
 
   /* Text Colors: */
-  --text-color: #a26c48;
-  --sidebar-text-color: #add97b;
-  --link-color: #88b671;
-  --link-color-hover: #ff79c7;
+  --text-color: #a66b43;
+  --sidebar-text-color: #7d9c59;
+  --link-color: #ff79c7;
+  --link-color-hover: #ffc93f;
 
   /* Text: */
   --font: Comic Sans, cursive;
