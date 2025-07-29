@@ -54,7 +54,7 @@ lol,
 
 .img1 {
   /* cd image u can change the size too */
-  position: fixed;
+  position: static;
   width: auto;
   height: 90px;
   left: 20px;
