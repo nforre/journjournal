@@ -42,7 +42,7 @@
 #music {
 	box-sizing: border-box;
 	position: relative;
-  right: 40px;
+  right: 50px;
 	font-family: arial, nerdfont;
 	padding-top: 1px;
 	background: rgb(232, 84, 84);
@@ -53,7 +53,7 @@
 	font-size: 21px;
 	line-height: 31px;
 	width: 150px;
-	height: 230px;
+	height: 300px;
 	box-shadow: inset 2px -4px 10px #7e2222;
 	transition-duration: 0.5s;
 	border-radius: 10px;
