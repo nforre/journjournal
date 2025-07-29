@@ -38,6 +38,61 @@
   box-sizing: border-box;
 }
 
+lol {
+  
+  lol,
+  .img2 {
+    /* album's cover image u can change the size! */
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    color: black;
+    z-index: 999;
+  }
+
+  .img1 {
+    /* cd image u can change the size too */
+    position: absolute;
+    width:auto;
+    height:90px;
+    left: 65px;
+    z-index: 800;
+    -webkit-animation: spin 2s linear infinite;
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+  }
+
+  .img1 hover {
+    cursor: help;
+  }
+
+  @-moz-keyframes spin {
+    100% {
+      -moz-transform: rotate(360deg);
+    }
+  }
+
+  @-webkit-keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  .img1:hover {
+    /* this makes the cd stop spinning when hovering! */
+    -webkit-animation: pop 0.3s ease;
+  }
+}
+
 body {
   display: flex;
   cursor: url(rei-grey.cur), auto;
