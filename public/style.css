@@ -57,6 +57,7 @@ lol,
   position: absolute;
   width: auto;
   height: 90px;
+  left: 5px;
   z-index: 800;
   -webkit-animation: spin 2s linear infinite;
   -webkit-animation: spin 4s linear infinite;
