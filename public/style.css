@@ -56,8 +56,8 @@ lol,
   /* cd image u can change the size too */
   position: absolute;
   width: auto;
-  height: 91px;
-  right:  270px;
+  height: 92px;
+  right:  280px;
   z-index: 800;
   -webkit-animation: spin 2s linear infinite;
   -webkit-animation: spin 4s linear infinite;
