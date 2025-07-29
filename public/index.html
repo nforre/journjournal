@@ -18,9 +18,13 @@
     <!-- CSS: -->
     <!-- You will have to change this to "../style.css" if this HTML file is in a subfolder, to "../../style.css" if this HTML file is in 2 subfolders, etc. -->
     <link href="./style.css" rel="stylesheet" />
+     <!-- for customizable tooltips -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+  <script src="/files/tooltip-jquary.js"></script>
+  <script src="/files/tooltip.js"></script>
 
     <script type="text/javascript">
-      
+
 // <![CDATA[
 var colours=new Array("#a6f", "#60f", "#60f", "#a6f", "#ccc"); // colours for top, right, bottom and left borders and background of bubbles
 var bubbles=66; // maximum number of bubbles on screen
@@ -336,16 +340,53 @@ function createDiv(height, width) {
           <p>Necessit atibus perferendis inventore tempore vel optio similique blanditiis quasi quam?</p>
         </div>
         
-        <div id="lol"><img class="img2" src="https://2.bp.blogspot.com/-43yeeVGQbT4/WAItNpw95EI/AAAAAAAAEAM/uwyHtbK_L1oul6t780TmJ45Blm9KfR2ZwCLcB/s1600/cover.jpg"><img class="img1" src="https://web.archive.org/web/20220514070535im_/https://cdn.discordapp.com/attachments/822589056256311328/890714753780031488/image0.png"></div> 
-        <div class="sidebar-section">
-          <div class="sidebar-title">Section Title</div>
-          <ul>
-            <li>List</li>
-            <li>List</li>
-            <li><a href="/">List</a></li>
-            <li>List</li>
-          </ul>
+         <div id="music">
+    <div id="screen">
+      <!-- top bar info-->
+      <div id="top-bar">
+        <span id="current-screen">Music</span>
+      </div>
+      <!-- playlist screen -->
+      <div id="playlist" class="screen"></div>
+      <!-- song currently playing screen -->
+      <div id="current-song" class="screen">
+        <p class="info"><span class="icon">󰝚</span> <span id="song">song</span></p>
+        <img id="album" alt="album cover">
+        <p id="now-playing">1/?</p>
+        <hr>
+        <p class="info"><span class="icon"></span> <span id="artist">artist</span></p>
+        <p class="info"><span class="icon"></span> <span id="album-title">album title</span></p>
+        <p class="info"><span class="icon">󰌳</span> <span id="genre">genre</span></p>
+        <p class="info"><span class="icon"></span> <span id="year">year</span></p>
+        <!-- end of current song screen -->
+      </div>
+      <!-- bottom bar -->
+      <div id="bottom-bar">
+        <input type="range" min="1" max="100" value="0" class="track-progress" onchange="seekTo()">
+        <span id="playing-status"></span>
+        <span id="current-time">00:00</span>
+        <div id="current">
+          <span id="current-song-emoji"></span>
+          <span id="current-song-playing">current song playing</span>
         </div>
+        <span id="battery"></span>
+      </div>
+    </div>
+    <!-- grid controls -->
+    <div id="controls">
+      <button title="playlist screen" id="playlist-btn" onclick="showPlaylist()">menu</button>
+      <button class="up" title="search current song on youtube" onclick="youtubeSearch()"></button>
+      <button title="currently playing song screen" id="current-song-btn" onclick="showCurrentSong()">music</button>
+
+      <button title="previous track" onclick="prevTrack()" id="left"></button>
+      <button onclick="playpauseTrack()" id="play-pause">󰐎</button>
+      <button title="next track" onclick="nextTrack()" class="right"></button>
+
+      <span class="space"></span>
+      <button class="down"></button>
+      <span class="space"></span>
+    </div>
+    </div>
         
         <div class="sidebar-section">
           <div class="sidebar-title">Section Title</div>

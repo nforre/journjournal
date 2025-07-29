@@ -38,60 +38,333 @@
   box-sizing: border-box;
 }
 
-lol {
+/* mp3 player wrapper. everything is nested in here just to be extra careful and not mess with other elements you might have */
+#music {
+	box-sizing: border-box;
+	position: relative;
+	font-family: arial, nerdfont;
+	padding-top: 1px;
+	background: rgb(232, 84, 84);
+	border-top: 1px;
+	border-right: 0px;
+	margin-left: 50px;
+	color: rgb(153, 57, 57);
+	font-size: 21px;
+	line-height: 31px;
+	width: 200px;
+	height: 430px;
+	box-shadow: inset 2px -4px 10px #7e2222;
+	transition-duration: 0.5s;
+	border-radius: 10px;
+	overflow: hidden;
+
+	/* so every element has the same box-sizing */
+	* {
+		box-sizing: border-box;
+	}
+
+	/* album cover */
+	#album {
+		background: white;
+		color: black;
+		border: 1px solid white;
+		width: 40%;
+		margin: 0 0 0 5px;
+	}
+
+	/* 1/? tracks playing */
+	#now-playing {
+		display: inline-block;
+		position: absolute;
+		float: right;
+		margin-top: 30%;
+		margin-left: 40%;
+	}
+
+	/* line below album cover */
+	hr {
+		margin: 1px 0px;
+		padding: 0px;
+	}
+
+	/* controls grid */
+	#controls {
+		background: #ba3f3f;
+		position: relative;
+		display: grid;
+		border: 2px solid rgb(213, 213, 213);
+		width: 63%;
+		height: 30%;
+		margin: auto;
+		margin-top: 10px;
+		grid-template-columns: 33% 33% 33%;
+		grid-template-rows: 33% 33% 33%;
+		padding: 0px;
+		border-radius: 50%;
+	}
+
+	/* buttons in controls CSS */
+	#controls button {
+		cursor: pointer;
+		font-family: nerdfont, arial;
+		font-size: 13px;
+		background: inherit;
+		border: none;
+		border-radius: 50%;
+		color: #692222;
+		margin: 0px;
+		text-shadow: 2px -1px 2px rgba(225, 212, 212, 0.815);
+	}
+
+	/* since these buttons don't do anything, they have a 'blocked' cursor */
+	#controls button.down {
+		cursor: not-allowed;
+	}
+
+	/* the two mini curcle buttons */
+	button#playlist-btn,
+	button#current-song-btn {
+		position: relative;
+		border: 1px solid rgb(213, 213, 213);
+		background: #ba3f3f;
+		color: white;
+		font-size: 10px;
+		text-align: center;
+		border-radius: 50%;
+		z-index: 20;
+	}
+
+	/* play pause button */
+	button#play-pause {
+		color: white;
+		border: 1px solid rgb(39, 11, 11);
+		border-radius: 50%;
+		font-size: 14px;
+	}
+
+	/* screen wrapper */
+	#screen {
+		position: relative;
+		background: rgb(39, 36, 36);
+		text-align: left;
+		margin: auto;
+		width: 100%;
+		height: 63%;
+		border: 20px solid black;
+		border-top-width: 30px;
+		border-bottom-width: 30px;
+		font-size: 10px;
+		letter-spacing: 1px;
+		line-height: 13px;
+		overflow: hidden;
+		color: white;
+		scrollbar-color: rgb(173, 173, 173) transparent;
+	}
+
+	/* screen class (for playlist and currently playing song)*/
+	.screen {
+		position: relative;
+		overflow: auto;
+		height: 83.4%;
+	}
+
+	/* playlist songs listing */
+	#playlist button {
+		color: white;
+		text-align: left;
+		display: block;
+		width: 100%;
+		padding: 0px;
+		margin: 0px;
+		background: transparent;
+		font-family: inherit;
+		font-size: inherit;
+		border: 1px solid transparent; /* this is here so it doesn't move when hovered */
+	}
+
+	#playlist button:hover {
+		cursor: pointer;
+		background: #fdaa03;
+		background: linear-gradient(
+			360deg,
+			rgba(253, 170, 3, 1) 0%,
+			rgba(255, 217, 140, 1) 91%
+		);
+		color: black;
+		border: 1px solid #f79501;
+	}
+
+	/* button text */
+	#playlist button span {
+		margin: 4px 4px;
+		display: inline-block;
+		vertical-align: middle;
+		width: 70%;
+		font-size: 10px;
+		line-height: 13px;
+	}
+
+	/* button album cover */
+	#playlist button img {
+		display: inline-block;
+		vertical-align: middle;
+		line-height: 0px;
+		width: 30px;
+		border: 1px solid grey;
+		margin: 4px 4px;
+	}
+
+	/* currently playing screen music info */
+	p.info {
+		margin: 4px 4px;
+		padding: 0;
+	}
+
+	/* icons  */
+	.icon {
+		color: rgb(173, 174, 176);
+		font-size: 12px;
+	}
+
+	#top-bar {
+		background: #454343;
+		background: linear-gradient(
+			360deg,
+			rgb(108, 108, 108) 0%,
+			rgb(71, 71, 71) 100%
+		);
+		width: 100%;
+		text-align: center;
+		font-size: 9px;
+		padding: 1px;
+		margin: 0px;
+	}
+
+	#bottom-bar {
+		background: #454343;
+		background: linear-gradient(
+			360deg,
+			rgb(29, 28, 28) 0%,
+			rgb(149, 149, 149) 100%
+		);
+		width: 100%;
+		font-size: 9px;
+		line-height: 0px;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	/* current song playing in playlist screen */
+	#bottom-bar #current {
+		display: inline;
+	}
+
+	/* current time of song */
+	#bottom-bar span {
+		display: inline-block;
+		padding: 7px;
+	}
+
+	/* emoji that a song is playing */
+	span#current-song-emoji {
+		font-size: 10px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	/* scrolling name of current song playing */
+	span#current-song-playing {
+		display: inline-block;
+		padding: 0px;
+		width: 80px;
+		line-height: 10px;
+	}
+
+	/* playing status icon in the bar */
+	#playing-status {
+		font-size: 13px;
+		padding-left: 5px;
+		color: rgb(217, 217, 217);
+	}
+
+	/* battery icon in the bar */
+	#battery {
+		font-family: nerdfont;
+		padding-top: 10px;
+		padding-right: 4px;
+		font-size: 13px;
+		float: right;
+	}
+
+	/* song progress bar */
+	.track-progress {
+		accent-color: rgb(96, 155, 226);
+		-webkit-appearance: none;
+		cursor: help;
+		width: 100%;
+		height: 4px;
+		padding: 0px;
+		margin: 0px;
+		background: #454343;
+		background: linear-gradient(
+			360deg,
+			rgb(68, 68, 68) 0%,
+			rgb(129, 129, 129) 100%
+		);
+		border-bottom: 1px solid black;
+	}
+
+	/* song progress bar - thumb */
+	/* chrome */
+	.track-progress::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		height: 4px;
+		width: 2px;
+		background: rgb(96, 155, 226);
+		cursor: pointer;
+		border: none;
+		border-radius: 0px;
+	}
+
+	/* firefox */
+	.track-progress::-moz-range-thumb {
+		height: 2.6px;
+		width: 2px;
+		background: rgb(96, 155, 226);
+		cursor: pointer;
+		border: none;
+		border-radius: 0px;
+	}
+
+	/* song progress - bar progress */
+	/* only on firefox */
+	.track-progress::-moz-range-progress {
+		background: rgb(96, 155, 226);
+	}
 }
 
-lol,
-.img2 {
-  /* album's cover image u can change the size! */
-  position: relative;
-  width: 100px;
-  height: 100px;
-  background-color: black;
-  color: black;
-  z-index: 999;
+/* tooltip custom css */
+#s-m-t-tooltip {
+	background: rgb(0, 0, 0);
+	border-radius: 2px;
+	font-family: arial;
+	font-size: 11px;
+	color: rgb(238, 215, 215);
+	border: 1px solid rgb(6, 6, 6);
+	max-width: 400px;
+	text-align: center;
+	z-index: 9999;
+	margin: 30px 15px 7px 12px;
+	padding: 5px;
 }
 
-.img1 {
-  /* cd image u can change the size too */
-  position: static;
-  width: auto;
-  height: 90px;
-  left: 20px;
-  z-index: 800;
-  -webkit-animation: spin 2s linear infinite;
-  -webkit-animation: spin 4s linear infinite;
-  -moz-animation: spin 4s linear infinite;
-  animation: spin 4s linear infinite;
+/* nerdfonts */
+@font-face {
+	font-family: "nerdfont";
+	src: url(files/symbolsnerdfont.ttf);
 }
 
-.img1 hover {
-  cursor: help;
-}
-
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-.img1:hover {
-  /* this makes the cd stop spinning when hovering! */
-  -webkit-animation: pop 0.3s ease;
-}
 
 
 body {
