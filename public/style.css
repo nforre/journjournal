@@ -7,15 +7,15 @@
 /* Variables are used like this: var(--text-color) */
 :root {
   /* Background Colors: */
-  --background-color: #9bdc69ff;
+  --background-color: rgb(255, 186, 232);
   --content-background-color: #fde1ee;
-  --sidebar-background-color: #ffb2c9de;
+  --sidebar-background-color: #f7aabfef;
 
   /* Text Colors: */
-  --text-color: #885c1c;
-  --sidebar-text-color: #cc2166;
+  --text-color: #8c644a;
+  --sidebar-text-color: #e3709e;
   --link-color: #f59faa;
-  --link-color-hover: #d50bb1;
+  --link-color-hover: #ff1e92;
 
   /* Text: */
   --font: Comic Sans, cursive;
