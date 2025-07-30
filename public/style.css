@@ -38,6 +38,7 @@
   box-sizing: border-box;
 }
 
+
 /* mp3 player wrapper. everything is nested in here just to be extra careful and not mess with other elements you might have */
 #music {
 	box-sizing: border-box;
