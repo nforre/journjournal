@@ -8,7 +8,7 @@
 :root {
   /* Background Colors: */
   --background-color: rgb(255, 186, 232);
-  --content-background-color: #bfe4a8;
+  --content-background-color: #bfe4a8dd;
   --sidebar-background-color: #ffa2cae8;
 
   /* Text Colors: */
